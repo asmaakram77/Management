@@ -10,6 +10,12 @@
     <%= form.number_field :order_no %>
   </div>
 
+  <div class="field">
+    <%= form.fields_for :attachments do |photo| %>
+    <%= photo.file_field :photo %>
+    <% end %>
+  </div>
+  
   <p>
     <%= image_tag @customer.attachments.first.photo.url(:medium) if @customer.attachments.present? %>
   </p>

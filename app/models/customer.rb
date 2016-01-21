@@ -1,5 +1,5 @@
 class Customer < ActiveRecord::Base
-  attr_accessible :name, :table_no, :order, :order_no, :attachments_attributes
+  attr_accessible :name, :table_no, :order, :order_no, :attachments_attributes, :attachments
   validates :name, presence: true, uniqueness: true, length: { maximum: 100 }
   has_and_belongs_to_many :orders
   has_many :attachments, as: :attachable, dependent: :destroy
