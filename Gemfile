@@ -5,7 +5,7 @@ gem 'rails', '3.2.18'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development do
-gem 'mysql2', '~> 0.3.10'
+gem 'mysql2', '~> 0.3.18'
 end
 group :production do
 gem 'pg'
@@ -21,10 +21,14 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  
 end
 
 gem 'jquery-rails'
-
+gem 'paperclip'
+gem "twitter-bootstrap-rails"
+gem 'devise'
+gem 'thinking-sphinx', '~> 2.0.0'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

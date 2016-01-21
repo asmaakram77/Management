@@ -1,5 +1,6 @@
 <%= form_for [@customer, @order] do |form| %>
-
+	
+  
   <div class="field">
     <%= form.label :order %><br />
     <%= form.text_area :order %>
@@ -8,8 +9,12 @@
     <%= form.label :order_no %><br />
     <%= form.number_field :order_no %>
   </div>
+
+  <p>
+    <%= image_tag @customer.attachments.first.photo.url(:medium) if @customer.attachments.present? %>
+  </p>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Submit order" ,{:style=>"color:#ff1a1a;"} %>
   </div>
 <% end %>
 	

@@ -10,29 +10,23 @@
   <%= @customer.table_no %>
 </p>
 
+<p>
+  <b>Order:</b>
+  <%= @order.order %>
+</p>
+
+<p>
+  <b>Order no:</b>
+  <%= @order.order_no %>
+</p>
+
+
+
+
 
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
 <%= link_to 'Back', customers_path %>
 
 
-<%= form_for [@customer, @order] do |form| %>
-<div class="field">
-  <%= form.label :order %><br />
-  <%= form.text_field :order %>
-</div>
 
-<div class="actions">
-    <%= form.submit "Submit" %>
-</div>
-<% end %>
 
-<% @orders.each do |order| %>
-	<p>
-		<span> <%= order.created_at %> </span>
-	</p>
-	<p>
-		<span><b> Orders: </b></span>
-		<%= order.order %>
-	</p>
-
-<% end %>

@@ -17,6 +17,7 @@
     @order = Order.new
     @orders = @customer.orders
 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @customer }
@@ -27,6 +28,7 @@
   # GET /customers/new.json
   def new
     @customer = Customer.new
+    @customer.attachments.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,13 +38,16 @@
 
   # GET /customers/1/edit
   def edit
-    @customer = Customer.find(params[:id])
+    #@customer = Customer.find(params[:id])
   end
 
   # POST /customers
   # POST /customers.json
   def create
     @customer = Customer.new(params[:customer])
+
+    @orders = Order.where(:id => params[:order])
+    @customer.orders << @orders 
 
     respond_to do |format|
       if @customer.save
